@@ -1,42 +1,40 @@
 from blockchain import Blockchain
 
-
 blockchain = Blockchain()
 
-#aktor 1 pabrik
+#versi halal
 blockchain.add_block({
-    "no produk": "SAMYANG-001",
-    "product": "Samyang Buldak Hot Lava",
-    "bpom": "Terdaftar",
-    "halal": "Tersertifikasi",
-    "production_date": "2026-09-01",
-    "expiry_date": "2028-09-01",
-    "actor": "Pabrik",
-    "location": "Korea Selatan"
+    "Merek": "Mie Samyang",
+    "Flavour": "Keju",
+    "Ingredients": [
+        "Tepung Terigu", 
+        "Tapioka", 
+        "Minyak Wijen",
+        "Ekstrak Cabai"
+    ], 
+    "Production": "PT. GayaBebas"
 })
 
-#aktor 2 distributor
+#versi haram
 blockchain.add_block({
-    "no produk": "SAMYANG-001",
-    "product": "Samyang Buldak Hot Lava",
-    "actor": "Distributor",
-    "location": "Cirebon",
-    "status": "Diterima"
+    "Merek": "Mie Samyang",
+    "Flavour": "Spicy Pork",
+    "Ingredients": [
+        "Tepung Terigu",
+        "Minyak Babi",
+        "Pork Extract"
+    ],
+    "Production": "PT. GayaBebas"
 })
-#aktor3 itu tokoaja deh bikin kaya diatas 1 lagi, ststusnya ready buay dijual gitu cb ya
-#
-#
-#
-#
 
-
+#cetak isi wir!
 for block in blockchain.chain:
-
     print("=" * 50)
-    print("INDEX :", block.index)
-    print("DATA  :", block.data)
-    print("PREV  :", block.previous_hash)
-    print("HASH  :", block.hash)
-
-
+    print("INDEX   :", block.index)
+    print("ID      :", block.id)
+    print("EXPIRED :", block.expired)
+    print("DATA    :", block.data)
+    print("PREV    :", block.previous_hash)
+    print("HASH    :", block.hash)
+    
 print("\nBlockchain valid:", blockchain.is_valid())
