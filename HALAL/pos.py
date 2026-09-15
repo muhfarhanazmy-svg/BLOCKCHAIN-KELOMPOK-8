@@ -1,6 +1,5 @@
 import random
 
-
 def proof_of_stake(validators):
 
     total_stake = sum(validators.values())

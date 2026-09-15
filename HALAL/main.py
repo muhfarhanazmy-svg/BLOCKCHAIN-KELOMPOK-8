@@ -6,10 +6,10 @@ print("PROOF OF WORK")
 
 block = Block(
     index=1,
-    #ini apa deh
-    data={"message":"Produk telah diverifikas"},
+    data="Produk telah diverifikasi",
     previous_hash="0"
 )
+
 
 difficulty = 6
 

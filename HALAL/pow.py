@@ -1,7 +1,6 @@
 import hashlib
 import time
 
-
 def proof_of_work(block, difficulty):
     
     target = "0" * difficulty
