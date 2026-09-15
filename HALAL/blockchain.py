@@ -1,4 +1,4 @@
-from HALAL.block import Block
+from block import Block
 
 
 class Blockchain:
@@ -18,7 +18,6 @@ class Blockchain:
         )
 
     def add_block(self, data: dict):
-
         previous_block = self.chain[-1]
 
         new_block = Block(
@@ -32,7 +31,6 @@ class Blockchain:
     def is_valid(self):
 
         for i in range(1, len(self.chain)):
-
             current = self.chain[i]
             previous = self.chain[i - 1]
 
@@ -43,3 +41,15 @@ class Blockchain:
                 return False
 
         return True
+
+    def show(self):
+
+        for block in self.chain:
+
+            print("\n--------------------")
+            print("Block :", block.index)
+            print("Timestamp:", block.timestamp)
+            print("Data:", block.data)
+            print("Previous Hash:", block.previous_hash)
+            print("Nonce:", block.nonce)
+            print("Hash:", block.hash)

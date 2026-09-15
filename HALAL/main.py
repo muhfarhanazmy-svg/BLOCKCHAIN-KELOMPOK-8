@@ -1,42 +1,39 @@
-from blockchain import Blockchain
+from block import Block
+from pow import proof_of_work
+from pos import proof_of_stake
 
+print("PROOF OF WORK")
 
-blockchain = Blockchain()
+block = Block(
+    index=1,
+    #ini apa deh
+    data={"message":"Produk telah diverifikas"},
+    previous_hash="0"
+)
 
-#aktor 1 pabrik
-blockchain.add_block({
-    "no produk": "SAMYANG-001",
-    "product": "Samyang Buldak Hot Lava",
-    "bpom": "Terdaftar",
-    "halal": "Tersertifikasi",
-    "production_date": "2026-09-01",
-    "expiry_date": "2028-09-01",
-    "actor": "Pabrik",
-    "location": "Korea Selatan"
-})
+difficulty = 6
 
-#aktor 2 distributor
-blockchain.add_block({
-    "no produk": "SAMYANG-001",
-    "product": "Samyang Buldak Hot Lava",
-    "actor": "Distributor",
-    "location": "Cirebon",
-    "status": "Diterima"
-})
-#aktor3 itu tokoaja deh bikin kaya diatas 1 lagi, ststusnya ready buay dijual gitu cb ya
-#
-#
-#
-#
+print("\nData Block      :", block.data)
+print("Difficulty      :", difficulty)
 
+proof_of_work(block, difficulty)
 
-for block in blockchain.chain:
+print("Nonce           :", block.nonce)
+print("Hash            :", block.hash)
 
-    print("=" * 50)
-    print("INDEX :", block.index)
-    print("DATA  :", block.data)
-    print("PREV  :", block.previous_hash)
-    print("HASH  :", block.hash)
+print("\nPROOF OF STAKE")
 
+validators = {
+    "Farmer": 10,
+    "Distributor": 20,
+    "Warehouse": 30,
+    "Retailer": 40
+}
 
-print("\nBlockchain valid:", blockchain.is_valid())
+print("\nValidator:")
+for validator, stake in validators.items():
+    print(f"- {validator}: {stake} stake")
+
+selected = proof_of_stake(validators)
+
+print("\nValidator terpilih:", selected)
