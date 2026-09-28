@@ -1,0 +1,24 @@
+import hashlib
+import json
+from datetime import datetime, timedelta  #untuk data expired dengan jangka 2th kedepan
+
+class Block:
+    def __init__(self, index: int, data: dict, previous_hash: str):
+        self.index = index
+        self.timestamp = datetime.utcnow().isoformat()
+        self.data = data
+        self.nonce = 0
+        self.previous_hash = previous_hash
+        self.hash = self.calculate_hash()
+
+    def calculate_hash(self) -> str:
+        block_data = {
+            "index": self.index,
+            "timestamp": self.timestamp,
+            "data": self.data,
+            "previous_hash": self.previous_hash,
+            "nonce": self.nonce
+        }
+
+        encoded = json.dumps(block_data, sort_keys=True).encode()
+        return hashlib.sha256(encoded).hexdigest()

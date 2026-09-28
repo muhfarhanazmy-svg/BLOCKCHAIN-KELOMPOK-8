@@ -1,0 +1,23 @@
+diff 2
+nonce = 14
+Waktu = 0.0 sec
+hash = 002abf0584cdfd490d25755e6a79cd60c8f8ad86d400e17c547693766d848461
+
+diff 3
+nonce = 5955
+Waktu = 0.0071 detik
+hash =  0004908aa809e6cb5cb44e65ff2c05c13fd9dd3e959ddd5234d82c2f32f2c091
+
+diff 4
+
+Nonce : 59281
+Waktu : 0.0637 detik
+Nonce           : 59281
+Hash            : 0000464fa2e99a30ea79059ab9fd50d622eb582bacd453845df3bb7df44ac1ab
+
+diff 5
+
+Nonce : 787733
+Waktu : 0.9618 detik
+Nonce           : 787733
+Hash            : 000002d076ae26e80c1cbef7eecb983c0c298b2cf229f78b26411fa974846d18
