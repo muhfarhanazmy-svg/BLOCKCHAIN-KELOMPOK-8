@@ -1,4 +1,5 @@
 from block import Block
+<<<<<<< HEAD
 from blockchain import Blockchain
 from pow import proof_of_work
 from pos import proof_of_stake
@@ -45,6 +46,11 @@ blockchain.add_block({
     "status": "Ready untuk dijual"
 })
 
+=======
+from pow import proof_of_work
+from pos import proof_of_stake
+
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990
 print("PROOF OF WORK")
 
 block = Block(
@@ -54,7 +60,11 @@ block = Block(
 )
 
 
+<<<<<<< HEAD
 difficulty = 6 #hmmmini dipake ga ya
+=======
+difficulty = 6
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990
 
 print("\nData Block      :", block.data)
 print("Difficulty      :", difficulty)
@@ -67,10 +77,17 @@ print("Hash            :", block.hash)
 print("\nPROOF OF STAKE")
 
 validators = {
+<<<<<<< HEAD
     "Pabrik": 10,
     "BPOM": 20,
     "Distributor": 30,
     "Toko": 40
+=======
+    "Farmer": 10,
+    "Distributor": 20,
+    "Warehouse": 30,
+    "Retailer": 40
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990
 }
 
 print("\nValidator:")
@@ -79,4 +96,8 @@ for validator, stake in validators.items():
 
 selected = proof_of_stake(validators)
 
+<<<<<<< HEAD
 print("\nValidator terpilih:", selected)
+=======
+print("\nValidator terpilih:", selected)
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990

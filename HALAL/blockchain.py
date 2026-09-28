@@ -12,7 +12,11 @@ class Blockchain:
         return Block(
             index=0,
             data={
+<<<<<<< HEAD
                 "message": "Cek sertifikasi BPOM"
+=======
+                "message": "Genesis Block"
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990
             },
             previous_hash="0"
         )
@@ -47,9 +51,18 @@ class Blockchain:
         for block in self.chain:
 
             print("\n--------------------")
+<<<<<<< HEAD
             print("Block        :", block.index)
             print("Timestamp    :", block.timestamp)
             print("Data         :", block.data)
             print("Previous Hash:", block.previous_hash)
             print("Nonce        :", block.nonce)
             print("Hash         :", block.hash)
+=======
+            print("Block :", block.index)
+            print("Timestamp:", block.timestamp)
+            print("Data:", block.data)
+            print("Previous Hash:", block.previous_hash)
+            print("Nonce:", block.nonce)
+            print("Hash:", block.hash)
+>>>>>>> b64a8071cb42b633e5562e12c5ee7d780bbb6990
